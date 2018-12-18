@@ -39,7 +39,7 @@ class MusicList extends React.Component {
     return (
       <ScrollView>
         {this.renderTracks()}
-        {console.log(this.state)}
+        {/* {console.log(this.state,' state in the music list component')} */}
       </ScrollView>
     );
   }
