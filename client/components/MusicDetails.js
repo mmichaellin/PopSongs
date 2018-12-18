@@ -1,7 +1,8 @@
 import React from "react";
-import { Text, View, Image } from "react-native";
+import { Text, View, Image, Linking } from "react-native";
 import Card from "./Card";
 import CardSection from "./CardSection";
+import Button from './Button'
 
 const MusicDetails = props => {
   const {
@@ -11,6 +12,7 @@ const MusicDetails = props => {
     headerTextStyle,
     imageStyle
   } = styles;
+  let url = `https://www.google.com/search?q=${props.artistName}`
   return (
     <Card>
       <CardSection>
@@ -39,6 +41,9 @@ const MusicDetails = props => {
           }}
         />
       </CardSection>
+      <CardSection>
+        <Button artistName={props.artistName} onPress={()=>Linking.openURL(url)} />
+        </CardSection>
     </Card>
   );
 };
